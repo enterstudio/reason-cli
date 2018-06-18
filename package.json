@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "export PATH=\"$PWD/.bin:$PATH\" && ls -al ./.bin && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt && which berror",
-    "postinstall": "./scripts/performActualInstallAndFixLinks.sh"
+    "postinstall": "./scripts/performActualInstallAndFixLinks.sh",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,8 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "esy": "git://github.com/reasonml/esy.git#beta-v0.0.3"
-  }
+    "esy": "git://github.com/reasonml/esy.git#beta-v0.0.3",
+    "snyk": "^1.83.0"
+  },
+  "snyk": true
 }
